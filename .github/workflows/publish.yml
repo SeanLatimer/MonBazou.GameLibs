@@ -14,7 +14,7 @@ jobs:
       - name: 'Pack and push'
         shell: 'powershell'
         env:
-          NUGET_API_KEY: ${{ secrets.NUGETORG_TOKEN }}
+          NUGETORG_TOKEN: ${{ secrets.NUGETORG_TOKEN }}
         run: |
           ./pack.ps1
           nuget push **/*.nupkg -SkipDuplicate -NoSymbols -Source "nuget.org" -ApiKey "${Env:NUGETORG_TOKEN}"
