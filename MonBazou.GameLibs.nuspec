@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>MonBazou.GameLibs</id>
+    <version>$version$</version>
+    <authors>Santa Goat</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/SeanLatimer/MonBazou.GameLibs</projectUrl>
+    <repository type="git" url="https://github.com/SeanLatimer/MonBazou.GameLibs" />
+    <description>Stripped reference assemblies for Mon Bazou</description>
+    <tags>monbazou steam gamelibs</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="*.dll" target="lib/net48" />
+  </files>
+</package>

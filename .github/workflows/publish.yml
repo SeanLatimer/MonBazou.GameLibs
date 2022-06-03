@@ -1,0 +1,20 @@
+name: Publish
+on:
+  push:
+
+jobs:
+  publish:
+    name: 'Publish'
+    runs-on: 'windows-latest'
+    steps:
+      - name: 'Checkout Repository'
+        uses: 'actions/checkout@v2'
+      - name: Install NuGet
+        uses: nuget/setup-nuget@v1
+      - name: 'Pack and push'
+        shell: 'powershell'
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGETORG_TOKEN }}
+        run: |
+          ./pack.ps1
+          nuget push **/*.nupkg -SkipDuplicate -NoSymbols -Source "nuget.org" -ApiKey "${Env:NUGETORG_TOKEN}"
